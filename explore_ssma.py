@@ -23,10 +23,15 @@ def est_dependant(profil):
     Returns:
         bool: True si l'étudiant est dépendant, False sinon
     """
-    if profil[6] >=7:
-        return True
-    else:
-        return False
+    return profil[6]>=7
+
+def test_est_dependant():
+    assert ssma.est_dependant(profil1) is True
+    assert ssma.est_dependant(profil3) is False
+
+
+
+
 
 
 
@@ -43,7 +48,13 @@ def est_avant(profil1, profil2):
     Returns:
         bool: True si profil1 se place avant profil2, False sinon
     """
-    pass
+    if pays1 < pays2:
+        return True
+    elif pays1 > pays2:
+        return False
+    else:
+        return id1 < id2
+
 
 
 def moyenne_heures_ecran(liste_profils):
